@@ -1078,9 +1078,9 @@
             <configuration>
               <target>
                 <echo message="Moving unpacked dependencies to the right place..."/>
-                <move file="${assembly.dir}/system/pentaho-karaf-assembly" tofile="${assembly.dir}/system/karaf"/>
+                <move file="${assembly.dir}/system/pentaho-karaf-assembly" tofile="${assembly.dir}/system/karaf" failonerror="false" />
                 <!-- TODO: remove the version from the pdi-daemon-assembly archive root dir -->
-                <move file="${assembly.dir}/pdi-daemon-assembly-${pdi-daemon-assembly.version}" tofile="${assembly.dir}/adaptive-execution"/>
+                <move file="${assembly.dir}/pdi-daemon-assembly-${pdi-daemon-assembly.version}" tofile="${assembly.dir}/adaptive-execution" failonerror="false" />
               </target>
             </configuration>
           </execution>
