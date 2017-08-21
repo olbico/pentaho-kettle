@@ -1086,6 +1086,26 @@
           </execution>
         </executions>
       </plugin>
+      <plugin>
+        <artifactId>maven-antrun-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>remove-old-databases</id>
+            <phase>process-resources</phase>
+            <goals>
+              <goal>run</goal>
+            </goals>
+            <configuration>
+              <target>
+                <echo message="Deleting old database files..."/>
+                <delete failonerror="false">
+                    <fileset dir="${assembly.dir}/samples/db/" includes="*.db" />
+                </delete>
+              </target>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
       <!-- create the sample database, properties were read with properties-maven-plugin earlier -->
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
